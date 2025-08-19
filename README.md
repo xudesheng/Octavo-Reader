@@ -6,11 +6,19 @@
 
 *Browse arXiv • Translate Paragraphs • Generate Summaries*
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/desheng-io/Octavo/releases/tag/v1.0.0)
+[![Platform](https://img.shields.io/badge/platform-iPadOS%20%7C%20macOS-lightgrey)](https://apps.apple.com)
+[![Status](https://img.shields.io/badge/App%20Store-Released-success)](https://apps.apple.com)
+
 [🌟 **App Store**](https://apps.apple.com) • [🛟 **Support**](https://xudesheng.github.io/Octavo-Reader/) • [💬 **Discussions**](https://github.com/xudesheng/Octavo-Reader/discussions) • [🐛 **Issues**](https://github.com/xudesheng/Octavo-Reader/issues)
 
 </div>
 
 ---
+
+## 🎉 Version 1.0.0 Now Available!
+
+Octavo has been officially released on the App Store! This initial version brings powerful academic PDF reading capabilities to your iPad with AI-powered translation and summarization.
 
 ## ✨ Features
 
@@ -18,6 +26,7 @@
 - 🌐 **AI Translation** - Tap any paragraph for instant Chinese translation overlay  
 - 📄 **Smart Summaries** - AI-generated structured summaries of academic papers
 - 🔬 **arXiv Integration** - Built-in browser to discover and open papers seamlessly
+- 📑 **Bookmark Management** - Organize and navigate through document bookmarks
 - 🔒 **Privacy First** - Only text snippets sent to AI, never full PDFs
 - 🎯 **iPad Optimized** - Designed specifically for iPad with Mac Catalyst support
 
@@ -54,9 +63,23 @@
 
 ## 📱 System Requirements
 
-- **iPadOS 18.0+** (Primary platform)
-- **macOS 15.0+** (Mac Catalyst support)
+- **iPadOS 17.0+** (Primary platform)
+- **macOS 14.0+** (Mac Catalyst support)
 - Internet connection for AI features
+
+## 🗺️ What's Next
+
+### Version 1.1 (Coming Soon)
+- Enhanced annotation tools
+- Multiple translation languages  
+- Improved OCR for scanned documents
+- Citation management integration
+
+### Version 1.2 (Planned)
+- iCloud sync support
+- Collaboration features
+- Advanced search and filters
+- Custom reading themes
 
 ---
 
@@ -65,5 +88,7 @@
 **Made with ❤️ for Academic Research**
 
 ⭐ **Enjoying Octavo?** Please star this repo and rate us on the App Store!
+
+[Release Notes](https://github.com/desheng-io/Octavo/releases) • [Roadmap](https://github.com/xudesheng/Octavo-Reader/discussions/categories/roadmap)
 
 </div>
