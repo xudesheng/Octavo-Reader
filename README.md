@@ -20,12 +20,11 @@
 
 Octavo has been officially released on the App Store! This initial version brings powerful academic PDF reading capabilities to your iPad with AI-powered translation and summarization.
 
-## ✨ Features
+## ✨ Features (v1.0.0)
 
 - 📖 **Native PDF Reading** - Smooth PDFKit rendering optimized for iPad
 - 🌐 **AI Translation** - Tap any paragraph for instant Chinese translation overlay  
 - 📄 **Smart Summaries** - AI-generated structured summaries of academic papers
-- 🔬 **arXiv Integration** - Built-in browser to discover and open papers seamlessly
 - 📑 **Bookmark Management** - Organize and navigate through document bookmarks
 - 🔒 **Privacy First** - Only text snippets sent to AI, never full PDFs
 - 🎯 **iPad Optimized** - Designed specifically for iPad with Mac Catalyst support
@@ -69,17 +68,23 @@ Octavo has been officially released on the App Store! This initial version bring
 
 ## 🗺️ What's Next
 
-### Version 1.1 (Coming Soon)
+### Version 1.1 (In Development)
+- 🔬 **arXiv Integration** - Built-in browser to discover and open papers directly
 - Enhanced annotation tools
-- Multiple translation languages  
-- Improved OCR for scanned documents
-- Citation management integration
+- Multiple translation languages
+- Performance improvements
 
 ### Version 1.2 (Planned)
+- OCR support for scanned documents
 - iCloud sync support
-- Collaboration features
+- Citation management integration
 - Advanced search and filters
+
+### Future Versions
+- Collaboration features
 - Custom reading themes
+- Note-taking system
+- Reference management
 
 ---
 
