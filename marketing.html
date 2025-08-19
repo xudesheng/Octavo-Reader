@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octavo - Academic PDF Reader for iPad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #f5f5f7;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .header .subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+        
+        .feature-description {
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+        
+        .new-badge {
+            display: inline-block;
+            background: #34c759;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+            vertical-align: super;
+        }
+        
+        /* Screenshots Section */
+        .screenshots {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .screenshot-carousel {
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+        }
+        
+        .screenshot-container {
+            display: inline-flex;
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .screenshot-item {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        .screenshot-item img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-title {
+            font-size: 16px;
+            color: #6e6e73;
+            font-weight: 500;
+        }
+        
+        /* What's New Section */
+        .whats-new {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .version-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .version-number {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .version-date {
+            color: #6e6e73;
+            font-size: 14px;
+        }
+        
+        .version-list {
+            list-style: none;
+        }
+        
+        .version-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #3a3a3c;
+        }
+        
+        .version-list li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Privacy Section */
+        .privacy {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+        
+        .privacy-item {
+            text-align: center;
+        }
+        
+        .privacy-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .privacy-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .privacy-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1d1d1f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            color: #6e6e73;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .header .subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .screenshot-item img {
+                width: 250px;
+                height: 333px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="version-badge">Version 1.1 Now Available!</div>
+        <h1>Octavo</h1>
+        <p class="subtitle">Academic PDF Reader for iPad</p>
+        <p style="margin-bottom: 30px; opacity: 0.9;">Browse arXiv • Translate Paragraphs • Generate Summaries</p>
+        <a href="https://apps.apple.com" class="download-btn">Download on App Store</a>
+    </header>
+    
+    <!-- Features -->
+    <section class="features">
+        <h2 class="section-title">Powerful Features for Academic Reading</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3 class="feature-title">arXiv Integration<span class="new-badge">NEW</span></h3>
+                <p class="feature-description">Built-in arXiv browser to discover and open papers directly. Search, browse, and download academic papers without leaving the app.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🈸</div>
+                <h3 class="feature-title">Instant Translation</h3>
+                <p class="feature-description">Tap any paragraph for instant Chinese translation. Context-aware AI ensures accurate academic translations.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3 class="feature-title">AI Summaries<span class="new-badge">NEW</span></h3>
+                <p class="feature-description">Generate structured summaries of entire papers with key points, conclusions, and limitations automatically extracted.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📑</div>
+                <h3 class="feature-title">PDF Bookmarks<span class="new-badge">NEW</span></h3>
+                <p class="feature-description">Navigate through PDF bookmarks effortlessly. Bookmark documents and reopen them directly from your collection.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Privacy First</h3>
+                <p class="feature-description">Your PDFs never leave your device. Only text snippets are sent for translation, ensuring complete privacy.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">iPad Optimized</h3>
+                <p class="feature-description">Designed specifically for iPad with full trackpad and keyboard support. Also works on Mac with Catalyst.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <h2 class="section-title">See It in Action</h2>
+        
+        <div class="screenshot-carousel">
+            <div class="screenshot-container">
+                <!-- Existing Screenshots -->
+                <div class="screenshot-item">
+                    <img src="screenshots/1-main-reader.png" alt="Main PDF Reader">
+                    <p class="screenshot-title">Clean Reading Interface</p>
+                </div>
+                
+                <!-- NEW: ArXiv Browser Screenshot -->
+                <div class="screenshot-item">
+                    <img src="screenshots/6-arxiv-browser.png" alt="ArXiv Browser">
+                    <p class="screenshot-title">📍 Built-in arXiv Browser</p>
+                </div>
+                
+                <!-- NEW: ArXiv Search Screenshot -->
+                <div class="screenshot-item">
+                    <img src="screenshots/7-arxiv-search.png" alt="ArXiv Search">
+                    <p class="screenshot-title">📍 Quick Paper Search</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="screenshots/3-translation.png" alt="AI Translation">
+                    <p class="screenshot-title">Instant Translation</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="screenshots/8-summary.png" alt="Document Summary">
+                    <p class="screenshot-title">📍 AI-Powered Summaries</p>
+                </div>
+                
+                <!-- NEW: Document Bookmarks List -->
+                <div class="screenshot-item">
+                    <img src="screenshots/9-bookmarks-list.png" alt="Bookmarked Documents">
+                    <p class="screenshot-title">📍 Bookmarked Documents</p>
+                </div>
+                
+                
+                <div class="screenshot-item">
+                    <img src="screenshots/4-settings.png" alt="Settings">
+                    <p class="screenshot-title">Flexible AI Configuration</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="screenshots/5-welcome.png" alt="Welcome Screen">
+                    <p class="screenshot-title">Easy Document Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What's New -->
+    <section class="whats-new">
+        <h2 class="section-title">What's New</h2>
+        
+        <div class="version-section">
+            <div class="version-header">
+                <span class="version-number">Version 1.1</span>
+                <span class="version-date">Coming Soon</span>
+            </div>
+            <ul class="version-list">
+                <li>Built-in arXiv browser for discovering and downloading papers</li>
+                <li>Direct paper access with arXiv ID or URL</li>
+                <li>AI-powered document summarization with structured analysis</li>
+                <li>Document bookmark management and quick access</li>
+                <li>PDF internal bookmark navigation</li>
+                <li>Enhanced translation accuracy for technical terms</li>
+                <li>Improved PDF rendering performance</li>
+                <li>Bug fixes and stability improvements</li>
+            </ul>
+        </div>
+        
+        <div class="version-section">
+            <div class="version-header">
+                <span class="version-number">Version 1.0</span>
+                <span class="version-date">January 2025</span>
+            </div>
+            <ul class="version-list">
+                <li>Initial release</li>
+                <li>PDF reading with native PDFKit</li>
+                <li>AI-powered paragraph translation</li>
+                <li>Document summarization</li>
+                <li>Bookmark navigation</li>
+                <li>Multiple AI provider support</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Privacy -->
+    <section class="privacy">
+        <h2 class="section-title" style="color: white;">Your Privacy Matters</h2>
+        <p style="font-size: 18px; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+            Octavo is designed with privacy at its core. Your documents stay on your device, and we never collect personal data.
+        </p>
+        
+        <div class="privacy-grid">
+            <div class="privacy-item">
+                <div class="privacy-icon">🔐</div>
+                <h3 class="privacy-title">Local Processing</h3>
+                <p class="privacy-text">PDFs are processed entirely on your device</p>
+            </div>
+            
+            <div class="privacy-item">
+                <div class="privacy-icon">🚫</div>
+                <h3 class="privacy-title">No Data Collection</h3>
+                <p class="privacy-text">We don't track, collect, or store your data</p>
+            </div>
+            
+            <div class="privacy-item">
+                <div class="privacy-icon">🔑</div>
+                <h3 class="privacy-title">Your API Keys</h3>
+                <p class="privacy-text">Use your own API keys for complete control</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/xudesheng/Octavo-Reader">GitHub</a>
+            <a href="https://github.com/xudesheng/Octavo-Reader/issues">Support</a>
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="mailto:xudesheng@gmail.com">Contact</a>
+        </div>
+        <p class="copyright">© 2025 Desheng Xu. All rights reserved.</p>
+    </footer>
+</body>
+</html>
